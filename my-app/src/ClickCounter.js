@@ -1,14 +1,11 @@
 import React from "react";
 
 export class ClickCounter extends React.Component {
-
     state = {
         count: this.props.initialValue,
     };
 
-    handleIncrementButton = (event) => {
-        console.log(event)
-
+    handleIncrementButton = () => {
         this.setState(() => {
             return {
                 count: this.state.count + this.props.incrementBy,
