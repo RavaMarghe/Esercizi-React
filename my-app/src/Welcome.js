@@ -10,10 +10,4 @@ export class Welcome extends React.Component {
             </div>
         )
     }
-}
-
-// if no name prop is passed to the Welcome component, it will be rendered whitout the name (Welcome, !)
-Welcome.defaultProps = {
-    name: 'Margherita',
-    age: 23
-}
+} 
