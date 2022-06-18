@@ -23,6 +23,14 @@ export class Login extends React.Component {
     console.log(this.state);
   };
 
+  reset = () => {
+    this.setState({
+      username: "",
+      password: "",
+      remember: false,
+    })
+  }
+
   render() {
     return (
       <form>
@@ -58,6 +66,7 @@ export class Login extends React.Component {
         </div>
         <div>
           <button disabled={(this.state.username === "" || this.state.password === "")} onClick={this.onLogin}>Login</button>
+          <button onClick={this.reset}>Reset</button>
         </div>
       </form>
     );
