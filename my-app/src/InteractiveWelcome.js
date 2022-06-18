@@ -22,6 +22,7 @@ export class InteractiveWelcome extends React.Component {
   render() {
     return (
       <div>
+        <Welcome name={this.state.name} />
         <div>
           <input
             name="name"
@@ -33,8 +34,6 @@ export class InteractiveWelcome extends React.Component {
         <div>
           <button onClick={this.handleResetState}>Reset</button>
         </div>
-        
-        <Welcome name={this.state.name} />
       </div>
     );
   }

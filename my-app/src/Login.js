@@ -18,35 +18,47 @@ export class Login extends React.Component {
     });
   };
 
+  onLogin = (event) => {
+    event.preventDefault();
+    console.log(this.state);
+  };
+
   render() {
     return (
       <form>
-        <label>
-          Name:
-          <input
-            name="username"
-            value={this.state.username}
-            onChange={this.handleInputChange}
-          />
-        </label>
-        <label>
-          Password:
-          <input
-            name="password"
-            type="password"
-            value={this.state.password}
-            onChange={this.handleInputChange}
-          />
-        </label>
-        <label>
-          Remember:
-          <input
-            name="remember"
-            type="checkbox"
-            checked={this.state.remember}
-            onChange={this.handleInputChange}
-          />
-        </label>
+        <div>
+          <label>
+            Name:
+            <input
+              name="username"
+              value={this.state.username}
+              onChange={this.handleInputChange}
+              required
+            />
+          </label>
+          <label>
+            Password:
+            <input
+              name="password"
+              type="password"
+              value={this.state.password}
+              onChange={this.handleInputChange}
+              required
+            />
+          </label>
+          <label>
+            Remember:
+            <input
+              name="remember"
+              type="checkbox"
+              checked={this.state.remember}
+              onChange={this.handleInputChange}
+            />
+          </label>
+        </div>
+        <div>
+          <button disabled={(this.state.username === "" || this.state.password === "")} onClick={this.onLogin}>Login</button>
+        </div>
       </form>
     );
   }

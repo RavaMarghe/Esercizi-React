@@ -7,21 +7,20 @@ import { InteractiveWelcome } from "./InteractiveWelcome";
 import { Login } from "./Login";
 
 export class App extends React.Component {
-    render() {
-        return (
-            <div>
-                <Hello />
-                <hr />
-                <Counter />
-                <hr />
-                <ClickCounter />
-                <hr />
-                <ClickTracker />
-                <hr />
-                <InteractiveWelcome />
-                <hr />
-                <Login />
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div>
+        <InteractiveWelcome />
+        <Hello />
+        <hr />
+        <Counter />
+        <hr />
+        <ClickCounter />
+        <hr />
+        <ClickTracker />
+        <hr />
+        <Login />
+      </div>
+    );
+  }
 }
