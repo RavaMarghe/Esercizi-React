@@ -10,7 +10,9 @@ export class ToDoList extends React.Component {
     this.setState({ newItem: event.target.value });
   };
 
-  handlePushButton = () => {
+  handlePushButton = (event) => {
+    event.preventDefault();
+
     this.setState((state) => ({
       items: state.items.concat(this.state.newItem),
       newItem: "",
@@ -20,8 +22,12 @@ export class ToDoList extends React.Component {
   render() {
     return (
       <div>
-          <h1>To do list</h1>
-        <input name="newItem" onChange={this.handleInputChange} />
+        <h1>To do list</h1>
+        <input
+          name="newItem"
+          onChange={this.handleInputChange}
+          value={this.state.newItem}
+        />
         <button onClick={this.handlePushButton}>Add a new item</button>
         <ul>
           {this.state.items.map((item, index) => (
