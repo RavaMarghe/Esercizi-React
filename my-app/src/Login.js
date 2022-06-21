@@ -28,47 +28,57 @@ export class Login extends React.Component {
       username: "",
       password: "",
       remember: false,
-    })
-  }
+    });
+  };
 
   render() {
     return (
-      <form>
-        <div>
-          <label>
-            Name:
-            <input
-              name="username"
-              value={this.state.username}
-              onChange={this.handleInputChange}
-              required
-            />
-          </label>
-          <label>
-            Password:
-            <input
-              name="password"
-              type="password"
-              value={this.state.password}
-              onChange={this.handleInputChange}
-              required
-            />
-          </label>
-          <label>
-            Remember:
-            <input
-              name="remember"
-              type="checkbox"
-              checked={this.state.remember}
-              onChange={this.handleInputChange}
-            />
-          </label>
-        </div>
-        <div>
-          <button disabled={(this.state.username === "" || this.state.password === "")} onClick={this.onLogin}>Login</button>
-          <button onClick={this.reset}>Reset</button>
-        </div>
-      </form>
+      <div>
+        <h1>Controlled form</h1>
+        <form>
+          <div>
+            <label>
+              Name:
+              <input
+                name="username"
+                value={this.state.username}
+                onChange={this.handleInputChange}
+                required
+              />
+            </label>
+            <label>
+              Password:
+              <input
+                name="password"
+                type="password"
+                value={this.state.password}
+                onChange={this.handleInputChange}
+                required
+              />
+            </label>
+            <label>
+              Remember:
+              <input
+                name="remember"
+                type="checkbox"
+                checked={this.state.remember}
+                onChange={this.handleInputChange}
+              />
+            </label>
+          </div>
+          <div>
+            <button
+              disabled={
+                this.state.username === "" || this.state.password === ""
+              }
+              onClick={this.onLogin}
+            >
+              Login
+            </button>
+            <button onClick={this.reset}>Reset</button>
+          </div>
+        </form>
+      </div>
     );
   }
 }
