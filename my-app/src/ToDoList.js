@@ -10,9 +10,7 @@ export class ToDoList extends React.Component {
     this.setState({ newItem: event.target.value });
   };
 
-  handlePushButton = (event) => {
-    event.preventDefault();
-
+  handlePushButton = () => {
     this.setState((state) => ({
       items: state.items.concat(this.state.newItem),
       newItem: "",
@@ -20,8 +18,15 @@ export class ToDoList extends React.Component {
   };
 
   handleResetList = () => {
-    this.setState((state) => ({
+    this.setState({
       items: [],
+    });
+  };
+
+  handleRemoveButton = (event) => {
+    const prevSiblings = event.target.previousSibling.textContent;
+    this.setState((state) => ({
+          items: state.items.filter((item) => item !== prevSiblings)
     }));
   };
 
@@ -39,7 +44,10 @@ export class ToDoList extends React.Component {
 
         <ul>
           {this.state.items.map((item, index) => (
-            <li key={item + index}>{item}</li>
+            <div>
+              <li key={item + index}>{item}</li>
+              <button onClick={this.handleRemoveButton}>Remove item</button>
+            </div>
           ))}
         </ul>
       </div>
