@@ -22,7 +22,7 @@ export class UncontrolledLogin extends React.Component {
         <form onSubmit={this.handleSubmitButton}>
           <label>
             Username:
-            <input name="username" required />
+            <input name="username" required autoFocus />
           </label>
           <label>
             Password:
