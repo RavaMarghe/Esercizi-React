@@ -31,7 +31,12 @@ export class Login extends React.Component {
     });
   };
 
+
   render() {
+    const WelcomeStyle = {
+      backgroundColor: (this.state.password.length >= 8) ? 'green' : 'red'
+  }
+
     return (
       <div>
         <h1>Controlled form</h1>
@@ -67,14 +72,7 @@ export class Login extends React.Component {
             </label>
           </div>
           <div>
-            <button
-              disabled={
-                this.state.username === "" || this.state.password === ""
-              }
-              onClick={this.onLogin}
-            >
-              Login
-            </button>
+            <button onClick={this.onLogin} style={WelcomeStyle}>Login</button>
             <button onClick={this.reset}>Reset</button>
           </div>
         </form>
