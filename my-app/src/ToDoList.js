@@ -26,13 +26,13 @@ export class ToDoList extends React.Component {
   handleRemoveButton = (event) => {
     const prevSiblings = event.target.previousSibling.textContent;
     this.setState((state) => ({
-          items: state.items.filter((item) => item !== prevSiblings)
+      items: state.items.filter((item) => item !== prevSiblings),
     }));
   };
 
   render() {
     return (
-      <div>
+      <div onClick={this.handleRemoveButton}>
         <h1>To do list</h1>
         <input
           name="newItem"
@@ -42,14 +42,7 @@ export class ToDoList extends React.Component {
         <button onClick={this.handlePushButton}>Add a new item</button>
         <button onClick={this.handleResetList}>Reset</button>
 
-        <ul>
-          {this.state.items.map((item, index) => (
-            <div>
-              <li key={item + index}>{item}</li>
-              <button onClick={this.handleRemoveButton}>Remove item</button>
-            </div>
-          ))}
-        </ul>
+        {this.props.render(this.state.items)}
       </div>
     );
   }
