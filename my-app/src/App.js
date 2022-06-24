@@ -12,7 +12,7 @@ import { UncontrolledLogin } from "./UncontrolledLogin";
 export class App extends React.Component {
   render() {
     return (
-      <Container>
+      <Container title="Esercizi react">
         <InteractiveWelcome />
         <Hello />
         <hr />
