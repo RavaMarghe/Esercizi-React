@@ -6,7 +6,7 @@ export class App extends React.Component {
   render() {
     return (
       <Container title="Esercizi react">
-        <Sum numbers={[3, 5, 8]} />
+        <Sum />
       </Container>
     );
   }
