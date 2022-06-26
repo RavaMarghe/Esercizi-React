@@ -1,6 +1,85 @@
-import React from "react";
+import { useState } from "react";
 
-export class Login extends React.Component {
+export function Login() {
+  const [data, setData] = useState({
+    username: "",
+    password: "",
+    remember: false,
+  });
+  const [disable, setDisable] = useState();
+
+  function handleInputChange(event) {
+    const { name, type, value, checked } = event.target;
+
+    setData((data) => {
+      return {
+        ...data,
+        [name]: type === "checkbox" ? checked : value,
+      };
+    });
+  }
+
+  function handleLogin(event) {
+    event.preventDefault();
+    console.log(data);
+
+    setDisable(() => {
+      return {
+        disable: data.username === "" && data.password === "" ? true : false,
+      };
+    });
+  }
+
+  function handleReset(event) {
+    event.preventDefault();
+    setData((data) => {
+      return {
+        ...data,
+        username: "",
+        password: "",
+        remember: false,
+      };
+    });
+
+    setDisable(() => {
+      return {
+        disable: false,
+      };
+    });
+  }
+
+  return (
+    <form>
+      <div>
+        <input
+          onChange={handleInputChange}
+          name="username"
+          value={data.username}
+        />
+        <input
+          onChange={handleInputChange}
+          name="password"
+          type="password"
+          value={data.password}
+        />
+        <input
+          onChange={handleInputChange}
+          name="remember"
+          type="checkbox"
+          checked={data.remember}
+        />
+      </div>
+      <div>
+        <button onClick={handleLogin} disabled={disable}>
+          Login
+        </button>
+        <button onClick={handleReset}>Reset</button>
+      </div>
+    </form>
+  );
+}
+
+/*export class Login extends React.Component {
   state = {
     username: "",
     password: "",
@@ -79,4 +158,4 @@ export class Login extends React.Component {
       </div>
     );
   }
-}
+}*/
