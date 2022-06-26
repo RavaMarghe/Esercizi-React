@@ -1,12 +1,12 @@
 import React from "react";
-import { ClickCounter } from "./ClickCounter";
 import { Container } from "./Container";
+import { Login } from "./Login";
 
 export class App extends React.Component {
   render() {
     return (
       <Container title="Esercizi react">
-        <ClickCounter />
+        <Login />
       </Container>
     );
   }
