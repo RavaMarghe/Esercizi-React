@@ -1,13 +1,16 @@
 import React from "react";
+import { ClickCounter } from "./ClickCounter";
 import { Container } from "./Container";
-import { Counter } from "./Counter";
-import { Login } from "./Login";
+
+function onCounterChange(count){
+  console.log(`The Counter is now: ${count}`)
+}
 
 export class App extends React.Component {
   render() {
     return (
       <Container title="Esercizi react">
-        <Login />
+        <ClickCounter initialValue={0} onCounterChange={onCounterChange}/>
       </Container>
     );
   }

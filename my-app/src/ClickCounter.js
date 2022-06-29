@@ -1,22 +1,18 @@
 import { useEffect, useState } from "react";
 
-export function ClickCounter({ initialValue = 0 }) {
-  const [counter, setCounter] = useState(initialValue);
+export function ClickCounter(props) {
+  const [counter, setCounter] = useState(props.initialValue);
 
   useEffect(() => {
-    console.log(`The current counter is: ` + onCounterChange());
-  }, [counter, onCounterChange]);
-
-  function onCounterChange() {
-    return counter;
-  }
+    props.onCounterChange(counter);
+  }, [counter, props]);
 
   function handleIncrementButton() {
     setCounter((c) => c + 1);
   }
 
   function handleResetButton() {
-    setCounter(initialValue);
+    setCounter(props.initialValue);
   }
 
   return (
