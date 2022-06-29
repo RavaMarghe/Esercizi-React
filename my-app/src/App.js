@@ -1,17 +1,18 @@
 import React from "react";
 import { Container } from "./Container";
-import { GithubUserList } from "./GithubUserList";
+import { GithubUser } from "./GithubUser";
+import {Counter} from "./Counter";
 
 /*function onCounterChange(count){
   console.log(`The Counter is now: ${count}`)
 }*/
 
-export class App extends React.Component {
-  render() {
-    return (
-      <Container title="Esercizi react">
-        <GithubUserList />
-      </Container>
-    );
-  }
+export function App() {
+
+  return (
+    <Container title="Esercizi react">
+      <GithubUser username="RavaMarghe" />
+      <Counter />
+    </Container>
+  );
 }
