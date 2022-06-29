@@ -1,17 +1,19 @@
 import React from "react";
 import { Container } from "./Container";
-import { GithubUserList } from "./GithubUserList";
+import { useCounter } from "./useCounter";
 
 /*function onCounterChange(count){
   console.log(`The Counter is now: ${count}`)
 }*/
 
-export class App extends React.Component {
-  render() {
+
+export function App () {
+  const {counter, onIncrement} = useCounter()
+
     return (
       <Container title="Esercizi react">
-        <GithubUserList />
+        <button onClick={onIncrement}>{counter}</button>
       </Container>
     );
   }
-}
+
