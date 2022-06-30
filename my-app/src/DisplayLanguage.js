@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { LanguageContext } from "./LanguageContext";
 
-const Strings = {
+const translation = {
+  en: "Current language is: ",
+  it: "La lingua attuale è: ",
+};
+
+export function DisplayLanguage() {
+  const language = useContext(LanguageContext);
+
+  return (
+    <h1>
+      {translation[language]}
+      {language}
+    </h1>
+  );
+}
+
+/*const Strings = {
   en: {
     CURRENT_LANG: "Current language is: ",
   },
@@ -27,4 +43,4 @@ export class DisplayLanguage extends React.Component {
       </div>
     );
   }
-}
+}*/
