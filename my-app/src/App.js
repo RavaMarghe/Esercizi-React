@@ -1,8 +1,6 @@
 import React from "react";
-import { Container } from "./Container";
-import { GithubUser } from "./GithubUser";
-import { Counter } from "./Counter";
-import { DisplayLanguage } from "./DisplayLanguage";
+import { Route, Routes } from "react-router-dom";
+import { Welcome } from "./Welcome";
 
 /*function onCounterChange(count){
   console.log(`The Counter is now: ${count}`)
@@ -10,8 +8,10 @@ import { DisplayLanguage } from "./DisplayLanguage";
 
 export function App() {
   return (
-    <Container title="Esercizi react">
-      <Counter />
-    </Container>
+    <div>
+      <Routes>
+        <Route path="/" element={<Welcome name={"Marghe"} />} />
+      </Routes>
+    </div>
   );
 }
