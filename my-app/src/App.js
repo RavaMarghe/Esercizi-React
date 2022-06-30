@@ -1,9 +1,8 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 import { Welcome } from "./Welcome";
 import { Counter } from "./Counter";
 import { ShowGithubUser } from "./ShowGithubUser";
-import { GithubUser } from "./GithubUser";
 
 /*function onCounterChange(count){
   console.log(`The Counter is now: ${count}`)
@@ -14,9 +13,11 @@ export function App() {
     <div>
       <Routes>
         <Route path="/" element={<Welcome name={"Marghe"} />} />
-        <Route path="/counter" element={<Counter  />} />
+        <Route path="/counter" element={<Counter />} />
         <Route path="/users/:username" element={<ShowGithubUser />} />
       </Routes>
+      <Link to="/">Welcome</Link> | <Link to="/counter">Counter</Link> |
+      <Link to="/users/:username">Github user</Link>
     </div>
   );
 }
