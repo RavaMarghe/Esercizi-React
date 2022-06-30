@@ -11,7 +11,6 @@ import { DisplayLanguage } from "./DisplayLanguage";
 export function App() {
   return (
     <Container title="Esercizi react">
-      <DisplayLanguage />
       <Counter />
     </Container>
   );

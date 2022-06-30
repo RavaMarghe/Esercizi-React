@@ -1,6 +1,19 @@
 import { useEffect, useState } from "react";
+import { useCounter } from "./useCounter";
 
-export function ClickCounter(props) {
+export function ClokCounter() {
+  const {counter, onIncrement, onReset} = useCounter(initalValue)
+
+  return (
+    <div>
+      <h1>Button counter: {counter}</h1>
+      <button onClick={onIncrement}>Increment</button>
+      <button onClick={onReset}>Reset</button>
+    </div>
+  );
+}
+
+/*export function ClickCounter(props) {
   const [counter, setCounter] = useState(props.initialValue);
 
   useEffect(() => {
@@ -22,7 +35,7 @@ export function ClickCounter(props) {
       <button onClick={handleResetButton}>Reset</button>
     </div>
   );
-}
+}*/
 
 /*export class ClickCounter extends React.Component {
 
