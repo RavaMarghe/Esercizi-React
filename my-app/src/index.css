@@ -7,3 +7,14 @@
   border: solid 3px maroon;
   margin-bottom: 1rem;
 }
+
+button {
+  background-color: lightskyblue !important;
+  border: solid 1px black;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+input {
+  border: solid 1px black;
+}
