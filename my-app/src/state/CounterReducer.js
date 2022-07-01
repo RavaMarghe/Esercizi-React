@@ -35,5 +35,9 @@ export function counterReducer(state = defaultState, action) {
     case RESET: {
       return defaultState;
     }
+
+    default: {
+        return state
+    }
   }
 }
