@@ -9,4 +9,4 @@ function sum(a, b) {
 
 export function App() {
   return <h2>{sum(3, 7)}</h2>;
-}
+}  
